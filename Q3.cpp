@@ -1,22 +1,22 @@
 #include <stdio.h>
 
 int main() {
-    int terms = 15;
-    int first = 1, second = 1, next;
+    int numero1, numero2, numero3;
 
+    printf("Digite o primeiro numero: ");
+    scanf("%d", &numero1);
 
-    printf("1, 1, ");
+    printf("Digite o segundo numero: ");
+    scanf("%d", &numero2);
 
- 
-    for (int i = 3; i <= terms; i++) {
-        next = first + second;
-        printf("%d, ", next);
-        first = second;
-        second = next;
+    printf("Digite o terceiro numero: ");
+    scanf("%d", &numero3);
+
+    if (numero1 < numero2 && numero1 < numero3) {
+        printf("o menor numero e: %d\n", numero1);
+    } else if (numero2 < numero1 && numero2 < numero3) {
+        printf("o menor numero e: %d\n", numero2);
+    } else 
+	    printf("o menor numero e: %d\n", numero3);
     }
-
-    printf("\n");
-
-    return 0;
-}
 
