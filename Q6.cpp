@@ -1,48 +1,25 @@
 #include <stdio.h>
 
-
-typedef struct {
-    char nome[50];
-    float largura;
-    float comprimento;
-    float area;
-} Ccomodo;
-
 int main() {
-    Ccomodo comodos[50]; 
-    int n_cmds = 0; 
-    char continuar;
+    int taman;
+    int linha, coluna;
 
-    
-    do {
-        printf("digite o nome do comodo: ");
-        scanf("%s", comodos[n_cmds].nome); 
 
-        printf("digite a largura do comodo em m: ");
-        scanf("%f", &comodos[n_cmds].largura); 
+    printf("Digite o tamanho do quadrado: ");
+    scanf("%d", &taman);
 
-        printf("digite o comprimento do comodo em m: ");
-        scanf("%f", &comodos[n_cmds].comprimento);
 
-        
-        comodos[n_cmds].area = comodos[n_cmds].largura * comodos[n_cmds].comprimento;
+    if (taman > 0) {
 
-        n_cmds++; 
+        for (linha = 1; linha <= taman; linha++) {
 
-        printf("deseja continuar calculando outros comodos? (S/N): ");
-        scanf(" %c", &continuar);
-    } while (continuar == 'S' || continuar == 's');
-
-  
-    float area_total = 0;
-    printf("\nfale o comodo detalhadamente:\n");
-    for (int i = 0; i < n_cmds; i++) {
-        printf("Cômodo: %s, Largura: %.2f m, Comprimento: %.2f m, Área: %.2f m²\n",
-               comodos[i].nome, comodos[i].largura, comodos[i].comprimento, comodos[i].area);
-        area_total += comodos[i].area; 
+            for (coluna = 1; coluna <= taman; coluna++) {
+                printf("X ");
+            }
+            printf("\n"); 
+        }
+    } else {
+        printf("O tamanho deve ser maior que zero.\n");
     }
-    printf("área da residência: %.2f m²\n", area_total);
 
-    return 0;
 }
-

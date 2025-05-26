@@ -1,22 +1,16 @@
 #include <stdio.h>
 
-long long int potencia(int b, int ex) {
-    long long int resultado = 1;
-    for (int i = 0; i < ex; i++) {
-        resultado *= b;
-    }
-    return resultado;
-}
-
 int main() {
-    int b, ex;
+    int num;
 
-    printf("Digite o valor da base: ");
-    scanf("%d", &b);
-    printf("Digite o valor do expoente: ");
-    scanf("%d", &ex);
+    printf("Escreva um numero: ");
+    scanf("%d", &num);
 
-    printf("%d elevado a %d = %lld\n", b, ex, potencia(b, ex));
+    if (num >= 10 && num <= 15) {
+        printf("O numero esta entre 10 e 15.\n");
+    } else {
+        printf("O numero nao esta entre 10 e 15.\n");
+    }
 
-    return 0;
+
 }

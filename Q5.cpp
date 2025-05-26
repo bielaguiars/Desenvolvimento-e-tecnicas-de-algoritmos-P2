@@ -1,38 +1,31 @@
 #include <stdio.h>
 
 int main() {
-    int vlrs[5];
-    int maior, menor;
+    char resposta;
 
-    printf("Digite 5 valores positivos inteiros:\n");
-    for (int i = 0; i < 5; i++) {
-        do {
-            printf("Valor %d: ", i + 1);
-            scanf("%d", &vlrs[i]);
-            if (vlrs[i] < 0) {
-                printf("insira um valor positivo.\n");
-            }
-        } while (vlrs[i] < 0);
-    }
+    do {
+        int vlr1, vlr2, sm;
 
-    maior = menor = vlrs[0];
 
-    for (int i = 0; i < 5; i++) {
-        if (vlrs[i] > maior) {
-            maior = vlrs[i];
-        }
-        if (vlrs[i] < menor) {
-            menor = vlrs[i];
-        }
-    }
+        printf("Digite o primeiro valor: ");
+        scanf("%d", &vlr1);
 
-    printf("\nValores digitados:\n");
-    for (int i = 0; i < 5; i++) {
-        printf("%d ", vlrs[i]);
-    }
-    printf("\nMaior valor: %d\n", maior);
-    printf("Menor valor: %d\n", menor);
+        printf("Digite o segundo valor: ");
+        scanf("%d", &vlr2);
+
+ 
+        sm = vlr1 + vlr2;
+
+
+        printf("A soma dos valores é: %d\n", sm);
+
+ 
+        printf("Novo Cálculo (S/N)? ");
+        scanf(" %c", &resposta); 
+
+    } while (resposta == 'S' || resposta == 's');
+
+    printf("Fim dos Cálculos\n");
 
     return 0;
 }
-
